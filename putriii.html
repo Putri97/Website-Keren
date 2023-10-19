@@ -1,0 +1,102 @@
+<html>
+<head>
+    <title>Website Keren - Input Data</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 25%
+        }
+
+        th, td {
+            border: 1px solid rgb(17, 10, 13);
+            padding: 5px;
+        }
+
+        th {
+            background-color: #f882aa;
+            color: rgb(0, 2, 5);
+        }
+
+        td {
+            background-color: #1ac7c7;
+        }
+
+        #menu {
+            background-color: #0f85bb;
+            color: white;
+                
+        }
+
+        #nama {
+            background-color: #ff86a4;
+        }
+
+        #jurusan {
+            background-color: #ff86a4;
+        
+        }
+        .menu-home {
+        color: white;
+        background-color: #0f85bb;
+    }
+        .menu-home:hover {
+        color: rgb(255, 152, 203);
+        }
+    </style>
+    <script>
+        function submitForm() {
+            var nama = document.getElementById("nama").value;
+            var jurusan = document.getElementById("jurusan").value;
+
+            localStorage.setItem("nama", nama);
+            localStorage.setItem("jurusan", jurusan);
+
+            alert("Data berhasil disimpan!");
+        }
+
+        function clearForm() {
+            localStorage.removeItem("nama");
+            localStorage.removeItem("jurusan");
+
+            document.getElementById("nama").value = "";
+            document.getElementById("jurusan").value = "";
+
+            alert("Data berhasil dihapus!");
+        }
+    </script>
+</head>
+<body>
+    <h1>WEBSITE KEREN</h1>
+    <style>
+        h1
+        {color:rgb(14, 5, 5); background: rgb(219, 99, 99); padding:5px; width: 20%}
+    </style>
+
+    <form>
+        <table>
+            <tr>
+                <th>MENU</th>
+                <th>NAMA</th>
+                <th>JURUSAN</th>
+            </tr>
+            <tr>
+                <td class="menu-home">HOME</td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td id="menu" rowspan="2">INPUT</td>
+                <td><input type="text" id="nama"></td>
+                <td><input type="text" id="jurusan"></td>
+            </tr>
+            <tr>
+                <td>
+                    <button type="button" onclick="submitForm()">SUBMIT</button>
+                    <button type="button" onclick="clearForm()">CLEAR</button>
+                </td>
+                <td></td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>
